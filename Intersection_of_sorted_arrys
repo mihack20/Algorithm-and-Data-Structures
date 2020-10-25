@@ -1,0 +1,23 @@
+
+
+    vector<int> Solution::intersect(const vector<int> &arr1, const vector<int> &arr2) {
+        vector<int> res;
+        int m = arr1.size();
+        int n = arr2.size();
+        int i = 0, j = 0;
+      while (i < m && j < n)
+      {
+        if (arr1[i] < arr2[j])
+           i++;
+        else if (arr2[j] < arr1[i])
+           j++;
+        else /* if arr1[i] == arr2[j] */
+        {
+           res.push_back(arr2[j]);
+           i++;
+           j++;
+        }
+      }
+        return res;
+    }
+
